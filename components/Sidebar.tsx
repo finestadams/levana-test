@@ -1,8 +1,6 @@
-import { responseSymbol } from 'next/dist/server/web/spec-compliant/fetch-event';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, createContext } from 'react';
 
-const Sidebar = () => {
-  const [searchValue, setSearchValue] = useState('');
+export default function Sidebar({ searchValue, setSearchValue }: any) {
   const [changeUrl, setChangeUrl] = useState('');
   const [spinning, setSpinning] = useState(false);
   const [isDisabled, setDisabled] = useState(true);
@@ -11,6 +9,7 @@ const Sidebar = () => {
     const response = await fetch(url);
     setChangeUrl(response?.url);
     console.log('this is the url', response?.url);
+    console.log('this is the value', searchValue);
   };
 
   useEffect(() => {
@@ -90,18 +89,22 @@ const Sidebar = () => {
           className=" text-lavanaDark w-full py-2 text-sm bg-lanorButtonGrey rounded-full pl-10 font-semibold focus:outline-none focus:text-lavanaDark placeholder"
           placeholder="username"
           value={searchValue}
-          onChange={(event) => setSearchValue(event.target.value)}
+          onChange={(event) => {
+            setSearchValue(event.target.value);
+          }}
         />
         <button
           type="submit"
           disabled={!isDisabled || !searchValue}
-          className="mt-4 w-full px-4 py-2 rounded-2xl justify-center focus:outline-none focus:shadow-outline bg-lavanaBlue text-white"
+          className={
+            !isDisabled || !searchValue
+              ? 'mt-4 w-full px-4 py-2 rounded-2xl justify-center focus:outline-none focus:shadow-outline bg-lavanaGrey text-black'
+              : 'mt-4 w-full px-4 py-2 rounded-2xl justify-center focus:outline-none focus:shadow-outline bg-lavanaBlue text-white'
+          }
         >
           Create User
         </button>
       </form>
     </aside>
   );
-};
-
-export default Sidebar;
+}

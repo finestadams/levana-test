@@ -10,7 +10,8 @@ module.exports = {
       ...colors,
       lavanaSidebarColor: '#d9d9d9',
       lavanaBlue: '#294d9a',
-      lavanaDark: '#404040'
+      lavanaDark: '#404040',
+      lavanaGrey: '#757575'
     },
     extend: {}
   },
