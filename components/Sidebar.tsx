@@ -1,7 +1,11 @@
 import { useEffect, useState, createContext } from 'react';
 
-export default function Sidebar({ searchValue, setSearchValue }: any) {
-  const [changeUrl, setChangeUrl] = useState('');
+export default function Sidebar({
+  searchValue,
+  setSearchValue,
+  changeUrl,
+  setChangeUrl
+}: any) {
   const [spinning, setSpinning] = useState(false);
   const [isDisabled, setDisabled] = useState(true);
   const getAvatar = async (searchValue: string) => {
@@ -21,13 +25,13 @@ export default function Sidebar({ searchValue, setSearchValue }: any) {
     setSpinning(true);
     setDisabled(false);
     return () => clearTimeout(timer);
-  }, [searchValue]);
+  }, [searchValue, changeUrl]);
 
   return (
     <aside
       className=" bg-lavanaSidebarColor w-full min-h-screen flex flex-col items-center ml-0"
       style={{
-        padding: '41px 20px',
+        padding: '150px 20px',
         maxWidth: '295px',
         minWidth: '294px'
       }}
