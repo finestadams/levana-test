@@ -1,4 +1,5 @@
-import { useEffect, useState, createContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { ValueContext } from '../Layout/Layout';
 
 export default function Sidebar({
   searchValue,
@@ -6,6 +7,7 @@ export default function Sidebar({
   changeUrl,
   setChangeUrl
 }: any) {
+  const [, , setContact, isContact] = useContext(ValueContext);
   const [spinning, setSpinning] = useState(false);
   const [isDisabled, setDisabled] = useState(true);
   const getAvatar = async (searchValue: string) => {
@@ -27,6 +29,19 @@ export default function Sidebar({
     return () => clearTimeout(timer);
   }, [searchValue, changeUrl]);
 
+  const handleClick = async (e: any) => {
+    e.preventDefault();
+    const url = `https://randomuser.me/api/?seed=${searchValue}`;
+    const response = await fetch(url);
+    const responseJson = await response.json();
+    try {
+      if (responseJson?.results) {
+        setContact(responseJson?.results);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <aside
       className=" bg-lavanaSidebarColor w-full min-h-screen flex flex-col items-center ml-0"
@@ -105,6 +120,7 @@ export default function Sidebar({
               ? 'mt-4 w-full px-4 py-2 rounded-2xl justify-center focus:outline-none focus:shadow-outline bg-lavanaGrey text-black'
               : 'mt-4 w-full px-4 py-2 rounded-2xl justify-center focus:outline-none focus:shadow-outline bg-lavanaBlue text-white'
           }
+          onClick={(e) => handleClick(e)}
         >
           Create User
         </button>
