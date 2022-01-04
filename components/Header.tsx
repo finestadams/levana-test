@@ -7,7 +7,7 @@ const Header = () => {
         className=" flex items-center justify-between "
         style={{ padding: '42px 38px 29px 38px' }}
       >
-        this is header
+        Generated Contact:
       </div>
       <hr className="text-lavanaSidebarColor" />
     </>

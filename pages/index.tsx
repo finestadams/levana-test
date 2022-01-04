@@ -128,10 +128,12 @@ const Home: NextPage = () => {
         >
           <div
             style={{ transform: 'translate(-50%, -50%)' }}
-            className="absolute top-2/4 left-2/4 bg-white rounded-2xl w-50 h-20"
+            className="absolute top-2/4 left-2/4 bg-white rounded-2xl w-50 h-30"
           >
             <div className="p-4">
-              <p>Do you want to delete this contact?</p>
+              <p style={{ fontSize: '14px', paddingBottom: '10px' }}>
+                Do you want to delete this contact?
+              </p>
               <div className="flex items-center justify-center">
                 <button
                   className="mr-2 bg-lavanaRed rounded-2xl  text-white px-4 py-1"
