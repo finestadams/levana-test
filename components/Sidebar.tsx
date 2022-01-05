@@ -44,11 +44,9 @@ export default function Sidebar({
   };
   return (
     <aside
-      className=" bg-lavanaSidebarColor w-full min-h-screen flex flex-col items-center ml-0"
+      className=" bg-lavanaSidebarColor w-full min-h-screen flex flex-col items-center ml-0 max-w-sm"
       style={{
-        padding: '150px 20px',
-        maxWidth: '295px',
-        minWidth: '294px'
+        padding: '10px 20px'
       }}
     >
       <div className="flex flex-row justify-center cursor-pointer relative ">

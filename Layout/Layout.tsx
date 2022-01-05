@@ -12,20 +12,19 @@ export default function Layout({ children }: any) {
     <ValueContext.Provider
       value={[searchValue, changeUrl, setContact, isContact]}
     >
-      <div className="flex bg-white-100">
-        <Sidebar
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-          changeUrl={changeUrl}
-          setChangeUrl={setChangeUrl}
-        />
+      <div className="bg-white-100">
+        <Header />
+
         <div
-          className="flex flex-grow flex-col min-h-screen"
-          style={{
-            width: 'calc(100% - 295px)'
-          }}
+          className="flex flex-grow flex-row min-h-screen"
+          style={{ margin: '20px 5%' }}
         >
-          <Header />
+          <Sidebar
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+            changeUrl={changeUrl}
+            setChangeUrl={setChangeUrl}
+          />
           <main>{children}</main>
         </div>
       </div>

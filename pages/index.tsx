@@ -45,7 +45,10 @@ const Home: NextPage = () => {
   });
   return (
     <>
-      <div style={{ padding: '52px 38px' }}>
+      <div
+        style={{ padding: '10px 38px' }}
+        className="shadow mx-10 min-h-screen"
+      >
         {searchValue ? (
           <img
             className=" inline object-cover opacity-50"
@@ -62,12 +65,12 @@ const Home: NextPage = () => {
           ''
         )}
         <h1
-          className="text-3xl font-bold opacity-50 flex items-center"
+          className="text-xl font-bold opacity-50 flex items-center"
           style={{ paddingTop: '40px' }}
         >
           {searchValue}
         </h1>
-        <div className="flex flex-col mt-16">
+        <div className="flex flex-col mt-11">
           <div className="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
             <div className="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
               <table className="min-w-full">
