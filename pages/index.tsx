@@ -47,7 +47,7 @@ const Home: NextPage = () => {
     <>
       <div
         style={{ padding: '10px 38px' }}
-        className="shadow mx-10 min-h-screen"
+        className="shadow mx-10 min-h-screen m-w-full"
       >
         {searchValue ? (
           <img
