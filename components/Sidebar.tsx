@@ -100,7 +100,7 @@ export default function Sidebar({
           </div>
         )}
       </div>
-      <form style={{ marginTop: '40px' }}>
+      <form>
         <input
           type="text"
           className=" text-lavanaDark w-full py-2 text-sm bg-lanorButtonGrey rounded-full pl-10 font-semibold focus:outline-none focus:text-lavanaDark placeholder"

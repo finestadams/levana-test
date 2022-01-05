@@ -15,10 +15,7 @@ export default function Layout({ children }: any) {
       <div className="bg-white-100">
         <Header />
 
-        <div
-          className="flex flex-grow flex-row min-h-screen"
-          style={{ margin: '20px 5%' }}
-        >
+        <div className="flex flex-grow flex-row min-h-screen justify-center">
           <Sidebar
             searchValue={searchValue}
             setSearchValue={setSearchValue}
