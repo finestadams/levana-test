@@ -29,6 +29,6 @@
   }
   .right-img-text {
     display: flex;
-    margin-left: 0px;
+    justify-content: center;
   }
 }
