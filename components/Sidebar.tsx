@@ -44,7 +44,7 @@ export default function Sidebar({
   };
   return (
     <aside
-      className=" bg-lavanaSidebarColor w-full min-h-screen flex flex-col items-center ml-0 max-w-sm"
+      className="aside bg-lavanaSidebarColor flex flex-col items-center"
       style={{
         padding: '10px 20px'
       }}
@@ -100,7 +100,7 @@ export default function Sidebar({
           </div>
         )}
       </div>
-      <form>
+      <form style={{ marginTop: '20px' }}>
         <input
           type="text"
           className=" text-lavanaDark w-full py-2 text-sm bg-lanorButtonGrey rounded-full pl-10 font-semibold focus:outline-none focus:text-lavanaDark placeholder"

@@ -15,7 +15,7 @@ export default function Layout({ children }: any) {
       <div className="bg-white-100">
         <Header />
 
-        <div className="flex flex-grow flex-row min-h-screen justify-center">
+        <div className="flex justify-center items-center second">
           <Sidebar
             searchValue={searchValue}
             setSearchValue={setSearchValue}

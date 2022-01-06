@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.aside,
+.main {
+  height: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+  .aside {
+    display: flex;
+    flex-direction: row;
+    height: 200px !important;
+    width: 100%;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .second {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+  }
+  .main {
+    margin-left: 0px;
+  }
+  .right {
+    height: auto;
+  }
+  .right-img-text {
+    display: flex;
+    margin-left: 0px;
+  }
+}
